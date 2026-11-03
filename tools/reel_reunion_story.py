@@ -145,5 +145,5 @@ A = ROOT / "out" / "reunion-story.wav"
 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-filter_complex", filt, "-ar", "44100", "-ac", "2", str(A)], check=True)
 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(FR / "f%04d.jpg"), "-i", str(A),
                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
-                "-shortest", "-movflags", "+faststart", str(OUT / "video-9x16.mp4")], check=True)
-print(OUT / "video-9x16.mp4")
+                "-shortest", "-movflags", "+faststart", str(OUT / "video-story-9x16.mp4")], check=True)
+print(OUT / "video-story-9x16.mp4")
