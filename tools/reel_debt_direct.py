@@ -20,8 +20,8 @@ ICON = {  # stroke icons, 48x48 grid
 }
 def icon(k, s=74):
     return f"<svg viewBox='0 0 48 48' width='{s}' height='{s}' fill='none' stroke='{GOLD}' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'>{ICON[k]}</svg>"
-ITEMS = [("search", "بنفحص ملفك كامل", "בודקים את כל התיק"), ("scale", "بنشوف إذا في مجال للاعتراض", "בודקים אפשרות להתנגדות"),
-         ("doc", "تسوية ودفعات بتقدر عليها", "הסדר ותשלומים שאפשר לעמוד בהם"), ("shield", "حماية الراتب والحساب", "הגנה על משכורת וחשבון")]
+ITEMS = [("shield", "إلغاء الحجز عن الحساب والراتب", "ביטול עיקול בחשבון ובמשכורת"), ("renew", "إلغاء منع السفر", "ביטול עיכוב יציאה מהארץ"),
+         ("doc", "تسوية الديون بدفعات بتقدر عليها", "הסדר חובות בתשלומים"), ("scale", "إغلاق الملف بالإجراء", "סגירת התיק בהוצאה לפועל")]
 WA = """<svg viewBox="0 0 32 32" width="{s}" height="{s}"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.8 5.1 2.2.9 3 1 4.1.8.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>"""
 
 CSS = f"""
@@ -55,8 +55,8 @@ BODY = f"""<div id='root'>
   <div class='heb' id='h0' style='margin-top:70px'>הבטיחו לכם מחיקת חובות 100%? ברחו.</div>
 </div>
 <div class='sc' id='s1' style='justify-content:center;padding-bottom:120px'>
-  <div style='font-weight:900;font-size:96px;line-height:1.15' id='t1'>المحامي الصح<br><span class='hl'>بيحكيلك الحقيقة</span></div>
-  <div class='heb' style='font-size:48px;margin:24px 0 30px' id='h1'>עורך דין אמיתי אומר לכם את האמת</div>
+  <div style='font-weight:900;font-size:96px;line-height:1.15' id='t1'>ملفك بالإجراء؟<br><span class='hl'>منشتغل على:</span></div>
+  <div class='heb' style='font-size:48px;margin:24px 0 30px' id='h1'>תיק בהוצאה לפועל? אנחנו עובדים על:</div>
   {rows}
 </div>
 <div class='sc' id='s2' style='justify-content:center;padding-bottom:160px'>
@@ -66,9 +66,9 @@ BODY = f"""<div id='root'>
   <div class='heb' style='margin-top:30px'>שנות ניסיון</div>
 </div>
 <div class='sc' id='s3' style='justify-content:center;padding-bottom:180px'>
-  <div style='font-weight:900;font-size:120px;line-height:1.12' id='t3'>بدك الحقيقة<br><span class='hl'>عن ملفك؟</span></div>
-  <div class='heb' style='margin-top:30px' id='h3'>רוצים לדעת את האמת על התיק? דברו איתנו.</div>
-  <div style='font-size:46px;color:#D9D3C6;margin:70px 0 30px' id='p3'>ابعتلنا رقم الملف عالواتساب · בסודיות מלאה</div>
+  <div style='font-weight:900;font-size:120px;line-height:1.12' id='t3'>بدك تسكّر الملف<br><span class='hl'>وترتّب وضعك؟</span></div>
+  <div class='heb' style='margin-top:30px' id='h3'>רוצים לסגור את התיק ולהסדיר את המצב? דברו איתנו.</div>
+  <div style='font-size:46px;color:#D9D3C6;margin:70px 0 30px' id='p3'>ابعتلنا رقم الملف عالواتساب، بسرّية تامة</div>
   <div id='wa'>{WA.format(s=96)}<span style='font-weight:900;font-size:80px;direction:ltr;white-space:nowrap'>{PHONE}</span></div>
 </div>
 </div>
